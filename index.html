@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW5 - Scrabble Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+
+<body>
+
+    <h1>HW5 - Scrabble Game</h1>
+
+
+    <div id="container">
+
+        <!-- Scrabble Board (One Line) -->
+        <div id="scrabbleBoard" class="board">
+            <!-- Droppable squares will be added dynamically -->
+        </div>
+
+
+        <!-- Game Actions -->
+        <div id="gameActions">
+            <button id="resetBtn">Reset Game</button>
+            <button id="nextRoundBtn">Next Word</button>
+            <p>Score: <span id="score">0</span></p>
+            <p>Word: <span id="word"></span></p>
+        </div>
+
+
+        <!-- Tile Rack -->
+        <div id="tile-holder" class="rack">
+            
+            <img src="scrabble-tile-holder.png" alt="tile holder rack"> <!-- Tile holder image -->
+
+        </div>
+
+    
+
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+
+</html>

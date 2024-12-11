@@ -1,0 +1,112 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;  /* Ensure full height for centering */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;  /* Center content vertically */
+    flex-direction: column;
+    background-color: rgb(252, 254, 227);
+
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elements within the container */
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    height: 100%;
+    width: 100%;
+    border: 2px solid darkcyan;  /* Add a border around the container */
+    padding: 20px;  /* Optional: Add padding inside the container to create space between content and the border */
+    box-sizing: border-box;  /* Ensure padding is included in the element's total width/height */
+
+
+}
+
+h1{
+    text-align: center;
+    border-bottom: 1px solid darkcyan;
+}
+
+#scrabbleBoard{
+    display: flex; /* Display board horizontally */
+    margin-top: 10%; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; /* Keeps the board flexible within the container */
+
+}
+
+.tile {
+    display: flex;
+    border: 1px solid #000;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Set a fixed width for each tile */
+    height: 80px; /* Set a fixed height for each tile */
+}
+
+  .tile img {
+    width: 100%; /* Make the image fill the width of the tile */
+    height: 100%; /* Make the image fill the height of the tile */
+    object-fit: cover; /* This ensures the image covers the whole tile while maintaining its aspect ratio */
+}
+
+
+#gameActions{
+    margin-top: 10%;
+    text-align: center;
+
+}
+
+/* Skeleton of the tile holder the image will sit in */
+#tile-holder {
+    display: flex; /* Use flexbox to align the tiles */
+    justify-content: center; /* Center tiles horizontally */
+    align-items: center; /* Center tiles vertically */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 600px; /* Width of the tile rack */
+    height: 180px; /* Increase the height of the tile rack */
+    text-align: center;
+    position: relative; /* Make the tile holder position relative */
+}
+
+#tile-holder img {
+    position: absolute; /* Position the tile holder image absolutely inside the rack */
+    top: 0px;
+    left: 0;
+    width: 100%; /* Make the image fill the tile holder */
+    height: 96%; /* Ensure it fills the div */
+    object-fit: contain; /* This ensures the image fills the container */
+    object-position: center; /* Center the image within the tile holder */
+}
+
+
+#tile-holder .tile {
+    width: 80px; /* Set the width of each tile */
+    height: 80px; /* Set the height of each tile */
+    margin: 0 5px; /* Add some spacing between tiles */
+    display: flex; /* Use flexbox for each tile */
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Make tiles appear on top of the background image */
+    border: none; /* Explicitly remove any border from the tile */
+}
+
+#tile-holder .tile img {
+    width: 100%; /* Make the image fill the width of the tile */
+    height: 100%; /* Make the image fill the height of the tile */
+    object-fit: cover; /* Ensure the image covers the entire tile */
+}
+
+
+
+
+
+
+
