@@ -1,10 +1,17 @@
+/* 
+Created by: Nika Ashtarzadeh
+Email: Nika_Ashtarzadeh@student.uml.edu
+Date: 12/11/24
+*/
+
 $(document).ready(function() {
+
+
     // Define the tiles array
     var tiles = ["", "bonus", "", "", "", "bonus", ""];
   
     // Loop through the array and create tile elements
     var container = $("#scrabbleBoard");
-    
 
     tiles.forEach(function(tile, index) {
       // Create a div element for each tile
@@ -25,14 +32,13 @@ $(document).ready(function() {
       container.append(tileDiv);
     });
 
-    // end of initlaizing the board logic 
+    /*                      end of initlaizing the board display                                 */ 
 
 
 
 
     // Load the JSON data
     $.getJSON("pieces.json", function (scrabbleData) {
-
 
         // Create a pool of tiles
         const tilePool = [];
@@ -74,13 +80,80 @@ $(document).ready(function() {
         });
 
 
+
+
+
+
+
+
+
+        /*                           example                                         */ 
+
+        let totalPoints = 0; // holds the total points of the player
+        let draggedLetters = []; // holds the letters that the player dragged to form a word
+
+        draggedLetters = ["A", "P", "P", "L", "E"] // example, if user formed "APPLE"
+
+
+
+        const word = draggedLetters.join(""); // creating a string out of the dragged letters.
+
+        const isValidWord = checkIfValid(word); // checks if the word is valid; returns true if valid, false if not
+
+
+
+
+        // simple function that uses very limited dictionary to check if the word exists
+        function checkIfValid(word){
+            const dictionary = ["APPLE", "BANANA", "ORANGE"]; // example for now
+            return dictionary.includes(word);
+
+        }
+
+         // function to get the value of a given piece from the letter and piece struct
+        function getLetterValue(letter, pieces){
+            const piece = pieces.find(p => p.letter === letter);
+            return piece ? piece.value : 0
+        }
+
+        if(isValidWord){
+            // loop over each letter, and from that letter get its value
+            draggedLetters.forEach(letter =>{
+                const letterValue = getLetterValue(letter, scrabbleData.pieces);
+                totalPoints+=letterValue // award points if the word exists
+            })
+                // needs to be reset after reset game or a new word
+                if(draggedLetters[1] != ""){
+                    totalPoints *=2;
+                }
+    
+                if(draggedLetters[5]!= ""){
+                    totalPoints *=2;
+                }
+        }
+
+        // display points to the page using jquery
+        $("#score").text(totalPoints);
+
+        /*          end of example                                       */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
     }); // end of scrabbleData scope
 
 
 
 });
-
-
 
 
 
