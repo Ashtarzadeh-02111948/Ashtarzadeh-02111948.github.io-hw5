@@ -32,6 +32,9 @@ Below is a list of all external sources referenced in this project's code and co
    
    *These images provide the Scrabble letter tiles used in the game.*
 
+4. **pieces.json Associative Array**  
+   Source: Ramon Meza
+
 ## Extra Credit Feature:
 
 ### Word Validation with a Dictionary

@@ -2,7 +2,6 @@
 Created by: Nika Ashtarzadeh
 Email: Nika_Ashtarzadeh@student.uml.edu
 Date: 12/16/24
-
 */
 
 let draggedLetters = [];     // Array to track which letters are currently placed on the board
@@ -37,7 +36,6 @@ function checkIfValid(word) {
 }
 
 $(document).ready(function() {
-
     // Initialize a one-line board. Some tiles are marked as "bonus" and others are blank.
     // This array represents the layout of the board. 
     // Bonus tiles affect scoring by doubling the word score if the word touches them.
@@ -112,7 +110,7 @@ $(document).ready(function() {
     });
 
     // On initial page load, get pieces.json and set up the initial 7 tiles.
-    $.getJSON("pieces.json", function(scrabbleData) {
+    $.getJSON("pieces.json", function(scrabbleData) {   // Source for pieces.json Associative Array: Ramon Meza (included in zip file provided by instructor)
         piecesData = JSON.parse(JSON.stringify(scrabbleData));
         dealTiles(piecesData); // Initially deal the full 7 tiles since lettersInHolder is empty.
     });

@@ -38,7 +38,6 @@ h1{
 }
 
 
-
 /* controls styling for buttons and score/word display*/
 #gameActions{
     text-align: center;
@@ -58,8 +57,7 @@ h1{
 }
 
 
-
-/*      styling for board and letter tiles start here           */
+/*                      styling for board and letter tiles start here                                   */
 
 /* controls styling for board tile container */
 .board-tile {
@@ -123,9 +121,6 @@ h1{
     object-fit: cover; /* This ensures the image covers the whole tile while maintaining its aspect ratio */
 
 }
-
-/*          styling for board and letter tiles ends here                */
-
 
 #holder-img {
     margin-top: 50px;
