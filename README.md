@@ -1,12 +1,11 @@
+Created by: Nika Ashtarzadeh
+Email: Nika_Ashtarzadeh@student.uml.edu
+Date: 12/16/24
+
 GitHub repo: https://github.com/Ashtarzadeh-02111948/Ashtarzadeh-02111948.github.io-hw5
 
 Url of game: https://ashtarzadeh-02111948.github.io/Ashtarzadeh-02111948.github.io-hw5/
 
-Description: 
-/* 
-Created by: Nika Ashtarzadeh
-Email: Nika_Ashtarzadeh@student.uml.edu
-Date: 12/16/24
 
 Description:
 This program implements a one board line of Scrabble. The player is given a rack 
@@ -14,6 +13,24 @@ of letter tiles and can drag and drop these tiles onto a single row of Scrabble 
 When the player forms a valid word, points are awarded based on the Scrabble letter values in the provided pieces.json file.
 The player can continue to form multiple words, accumulating 
 points across rounds until no tiles remain or they choose to reset the game.
+
+# External Sources Referenced
+Below is a list of all external sources referenced in this project's code and comments:
+
+1. **Tile Holder Image (Rack)**  
+   Source: [https://pixabay.com/static/uploads/photo/2014/07/31/20/48/scrabble-tile-holder-406774_640.png](https://pixabay.com/static/uploads/photo/2014/07/31/20/48/scrabble-tile-holder-406774_640.png)  
+   
+   *Used as the image for the player's tile rack.*
+
+2. **Board Tile Images (Bonus and Blank Squares)**  
+   Source: [https://d1b10bmlvqabco.cloudfront.net/attach/icm9jynacvn5kx/i5ic1b2hwmz6nv/ihf34c9jbxpw/Scrabble_Board_OneLine.png](https://d1b10bmlvqabco.cloudfront.net/attach/icm9jynacvn5kx/i5ic1b2hwmz6nv/ihf34c9jbxpw/Scrabble_Board_OneLine.png)
+
+   *The bonus-tile.png and blank-tile.png images are derived from this Scrabble board image.*
+
+3. **Scrabble Letter Tiles Images**  
+   Source: [https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_LetterTiles.png](https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_LetterTiles.png)
+   
+   *These images provide the Scrabble letter tiles used in the game.*
 
 
 ## Extra Credit Features
