@@ -32,67 +32,53 @@ Below is a list of all external sources referenced in this project's code and co
    
    *These images provide the Scrabble letter tiles used in the game.*
 
-
-## Extra Credit Features
+## Extra Credit Feature:
 
 ### Word Validation with a Dictionary
-- I have implemented word validation against a dictionary file. The dictionary used is sourced from `/usr/share/dict/words` and is loaded in by the script at the start of the game.
-- Whenever the player forms a word on the board, the game checks if the word is present in the dictionary before awarding points.
-- This ensures that only legitimate English words (as defined by the dictionary file) score points.
-- If the word is not found in the dictionary, the player’s score for that round is zero, and they may need to rearrange tiles or try a different word.
+- **Status: Implemented**
+- Uses `/usr/share/dict/words` or a similar dictionary file to validate formed words.
+- If the formed word is not found, the player receives zero points and must adjust their tiles.
 
 
-Key Features and Implementation Details:
+## Key Features and Their Status
 
 1. **Tile Distribution and Random Selection:**
-   The tile distribution matches the standard Scrabble letters, as defined in the external 
-   pieces.json file. Each letter has a certain amount and value. The code loads this 
-   data, builds a pool of available tiles, and selects tiles randomly to deal to the player. 
-   Initially, the player receives 7 random tiles. After playing a word, only the number of tiles 
-   needed to return the rack back to 7 is drawn from the remaining pool. This ensures that the 
-   game follows the Scrabble logic of a diminishing tile set.
+   - Reads `pieces.json` for standard Scrabble distribution.
+   - Initially deals 7 tiles.
+   - After playing a word, only the needed number of tiles to refill to 7 are drawn.
+   - **Status: Fully Implemented and Working**
 
 2. **Rack and Board Interaction:**
-   The player's rack is represented as a droppable area where tiles can be placed and moved 
-   back and forth. Tiles are draggable, enabling the player to pick them up from the rack and 
-   place them onto the board squares. Tiles placed illegally or in invalid spots automatically 
-   revert back to the rack due to the use of jQuery UI draggable/droppable with `revert: "invalid"`.
+   - The rack and board are droppable areas.
+   - Tiles are draggable and revert if dropped in invalid areas.
+   - **Status: Fully Implemented and Working**
 
 3. **Board Layout and Bonus Squares:**
-   The board is represented as a single line of tiles, some of which are designated as bonus 
-   squares. When a word touches a bonus square, the total score for that word is doubled. This 
-   encourages strategic placement of tiles. The board and bonus squares are initialized at the 
-   start and remain consistent across rounds.
+   - Single-line board includes bonus squares that double the word score.
+   - **Status: Fully Implemented and Working**
 
-5. **Scoring Logic:**
-   Each placed tile contributes its Scrabble letter value to the total word score. If the word 
-   touches a bonus square, the entire word score is doubled. The player’s total score is 
-   accumulated over multiple words until they reset the game. Letter values are defined in the 
-   JSON data (pieces.json), and the program sums these values after determining that the formed 
-   word is valid.
+4. **Scoring Logic:**
+   - Letter values from `pieces.json` are summed for each valid word.
+   - Bonus squares double the total word score.
+   - Scores accumulate until reset.
+   - **Status: Fully Implemented and Working**
 
-6. **Adhering to Placement Rules:**
-   Except for the very first tile placed, every subsequent tile must be placed adjacent to 
-   existing placed tiles, ensuring no gaps. If a tile is placed leaving a gap, the tile is 
-   immediately reverted to the rack and the player is prompted to place tiles contiguously. 
-   This simulates the Scrabble requirement of forming continuous words on the board.
+5. **Adhering to Placement Rules:**
+   - Except for the first tile, each subsequent tile must be adjacent to previously placed tiles.
+   - If a gap is detected, the tile immediately reverts to the rack.
+   - **Status: Fully Implemented and Working**
 
-7. **Next Word vs. Reset Buttons:**
-   - **Next Word:** When the player finishes a valid word, clicking "Next Word" will add the 
-     current word’s score to the total score, clear only the board (not the rack), and top up 
-     the player’s hand to 7 tiles. The player can then continue placing tiles to form another 
-     word.
-   - **Reset:** Clicking "Reset" fully restarts the game—scores are reset, the rack and board 
-     are cleared, and the tile distribution is reset as if starting a new game.
+6. **Next Word vs. Reset Buttons:**
+   - **Next Word:** Adds current word’s score, clears the board (not the rack), and deals new tiles to top up to 7.
+   - **Reset:** Restores the game to its initial state.
+   - **Status: Fully Implemented and Working**
 
-8. **Game Termination/Tiles Running out:**
-   If at any point the tile pool is exhausted and the player cannot draw new tiles, the program 
-   indicates "No more tiles available!" The player may continue playing words if tiles remain 
-   in their rack, but eventually will be forced to reset or end the session when they can no 
-   longer form words.
+7. **Game Termination/Tiles Running Out:**
+   - If no more tiles can be drawn, a message is displayed and the player must eventually reset.
+   - **Status: Fully Implemented and Working**
 
 
-By combining these features, the code provides a simply version of the game Scrabble. It includes
+By combining these features, the code provides a simple version of the game Scrabble. It includes
 mechanics such as - managing a rack of letters, forming valid words on a board with bonus squares, 
 scoring, and playing multiple rounds until the tiles are exhausted or the player chooses to reset.
 */
