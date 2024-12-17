@@ -22,6 +22,11 @@ h1{
     border-bottom: 1px solid darkcyan;
 }
 
+h2{
+    margin-top: -10px;
+    text-align: center;
+}
+
 #container {
     display: flex;
     flex-direction: column;
