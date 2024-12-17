@@ -31,16 +31,22 @@ Date: 12/11/24
         <!-- Game Actions -->
         <div id="gameActions">
             <button id="resetBtn">Reset Game</button>
-            <button id="nextRoundBtn">Next Word</button>
+            <button id="nextWordBtn" disabled>Next Word</button>
+            <p>Total Score: <span id="totalScore">0</span></p>
             <p>Score: <span id="score">0</span></p>
             <p>Word: <span id="word"></span></p>
         </div>
 
 
         <!-- Tile Rack -->
-        <div id="tile-holder" class="rack">
-            
+        <div id="holder-img" >
             <img src="scrabble-tile-holder.png" alt="tile holder rack"> <!-- Tile holder image -->
+
+        </div>
+
+        <!-- letters to be held seperate from image rack -->
+        <div id="tile-holder" class="letter-holder">
+            <!-- home of droppable squares home -->
 
         </div>
 

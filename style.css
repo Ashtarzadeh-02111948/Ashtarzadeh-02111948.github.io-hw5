@@ -10,99 +10,134 @@ body, html {
 
 }
 
+h1{
+    margin-top: 150px;
+    text-align: center;
+    border-bottom: 1px solid darkcyan;
+}
+
 #container {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center elements within the container */
     width: 100%;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    height: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 700px;
     width: 100%;
-    border: 2px solid darkcyan;  /* Add a border around the container */
-    padding: 20px;  /* Optional: Add padding inside the container to create space between content and the border */
+    border: 3px solid darkcyan;  /* Add a border around the container */
+    padding: 50px;  /* Optional: Add padding inside the container to create space between content and the border */
     box-sizing: border-box;  /* Ensure padding is included in the element's total width/height */
 
-
 }
 
-h1{
+
+
+/* controls styling for buttons and score/word display*/
+#gameActions{
     text-align: center;
-    border-bottom: 1px solid darkcyan;
+    margin-top: 10%;
 }
 
+/* controls styling for the entire board */
 #scrabbleBoard{
     display: flex; /* Display board horizontally */
     margin-top: 10%; 
     margin-left: auto;
     margin-right: auto;
     width: 100%; /* Keeps the board flexible within the container */
+    max-width: 800px; /* Ensure the board doesn't stretch too wide */
+    overflow: visible;
 
 }
 
-.tile {
+
+
+/*      styling for board and letter tiles start here           */
+
+/* controls styling for board tile container */
+.board-tile {
+    position: relative;
+    margin: 0px;
     display: flex;
     border: 1px solid #000;
     justify-content: center;
     align-items: center;
-    width: 80px; /* Set a fixed width for each tile */
-    height: 80px; /* Set a fixed height for each tile */
+    left: 45px;
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box; /* Ensure border is included in the size */
 }
 
-  .tile img {
+/* Styling for the tile holder */
+#tile-holder {
+    display: flex;
+    position: relative; /* Ensure this can be adjusted */
+    justify-content: flex-start; /* Align the tiles at the start */
+    align-items: center; /* Vertically center the tiles */
+    gap: 0px; /* Ensure no gaps between tiles */
+    margin: 0 auto;
+    width: 575px;
+    max-width: 600px;
+    top: -124px; /* Shift tile holder up to align with letter tiles */
+    z-index: 1;
+    overflow: visible;
+}
+
+.letter-tile-container {
+    display: inline-flex; /* Align the items within the container */
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-tile {
+    margin: 0; /* Reset margin for letter tiles */
+    padding: 0; /* Reset padding for letter tiles */
+    z-index: 999;
+}
+
+.letter-tile-container img, /* Before adding letter-tile */
+.letter-tile {
+    width: 80px;
+    height: 80px;
+    margin: 0; /* Reset margins */
+    padding: 0; /* Reset paddings */
+    display: block; /* Ensures images display correctly */
+    object-fit: cover;
+    border: 2px solid transparent; /* Default transparent border */
+    box-sizing: border-box; /* Include borders in sizing */
+    
+}
+
+
+/* controls styling for the images of the board tiles itself */
+  .board img {
     width: 100%; /* Make the image fill the width of the tile */
     height: 100%; /* Make the image fill the height of the tile */
     object-fit: cover; /* This ensures the image covers the whole tile while maintaining its aspect ratio */
-}
-
-
-#gameActions{
-    margin-top: 10%;
-    text-align: center;
 
 }
 
-/* Skeleton of the tile holder the image will sit in */
-#tile-holder {
-    display: flex; /* Use flexbox to align the tiles */
-    justify-content: center; /* Center tiles horizontally */
-    align-items: center; /* Center tiles vertically */
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10%;
-    width: 600px; /* Width of the tile rack */
-    height: 180px; /* Increase the height of the tile rack */
-    text-align: center;
-    position: relative; /* Make the tile holder position relative */
-}
+/*          styling for board and letter tiles ends here                */
 
-#tile-holder img {
-    position: absolute; /* Position the tile holder image absolutely inside the rack */
-    top: 0px;
-    left: 0;
-    width: 100%; /* Make the image fill the tile holder */
-    height: 96%; /* Ensure it fills the div */
-    object-fit: contain; /* This ensures the image fills the container */
-    object-position: center; /* Center the image within the tile holder */
+
+#holder-img {
+    margin-top: 50px;
 }
 
 
-#tile-holder .tile {
-    width: 80px; /* Set the width of each tile */
-    height: 80px; /* Set the height of each tile */
-    margin: 0 5px; /* Add some spacing between tiles */
-    display: flex; /* Use flexbox for each tile */
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Make tiles appear on top of the background image */
-    border: none; /* Explicitly remove any border from the tile */
-}
 
-#tile-holder .tile img {
-    width: 100%; /* Make the image fill the width of the tile */
-    height: 100%; /* Make the image fill the height of the tile */
-    object-fit: cover; /* Ensure the image covers the entire tile */
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
