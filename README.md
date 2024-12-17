@@ -35,6 +35,10 @@ Below is a list of all external sources referenced in this project's code and co
 4. **pieces.json Associative Array**  
    Source: Ramon Meza
 
+5. **Using Fisher-Yates algorithm to randomly shuffle the array**
+    Source: https://stackoverflow.com/questions/59810241/how-to-fisher-yates-shuffle-a-javascript-array
+
+
 ## Extra Credit Feature:
 
 ### Word Validation with a Dictionary

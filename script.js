@@ -242,6 +242,7 @@ $(document).ready(function() {
             }
         });
 
+        // Tile holder logic to have tiles drop back onto it
         $("#tile-holder").droppable({
             accept: ".tile-letter",
             drop: function(event, ui) {
@@ -299,11 +300,14 @@ $(document).ready(function() {
             return;
         }
 
+        // Ensuring the letters are arranged in order of their index, i.e. it doesnt matter the order the player places letters, only its position
         draggedLetters.sort((a, b) => a.index - b.index);
 
         const minIndex = draggedLetters[0].index;
         const maxIndex = draggedLetters[draggedLetters.length - 1].index;
 
+
+        // adding '-' as placeholder for empty spaces between letter pieces if any exist
         let boardArray = [];
         for (let i = minIndex; i <= maxIndex; i++) {
             const tile = draggedLetters.find(item => item.index === i);
@@ -312,7 +316,7 @@ $(document).ready(function() {
 
         const word = boardArray.join('');
 
-        // Enforce a minimum word length of 2 letters.
+        // Enforce a minimum word length of 2 letters despite single lettered 'words' existing in the dictionary
         if (word.length < 2) {
             wordElement.textContent = word;
             $("#score").text(0);
@@ -321,6 +325,7 @@ $(document).ready(function() {
             return;
         }
 
+        // set isValidWord to the word if it found in the dictionary
         const isValidWord = checkIfValid(word);
 
         if (isValidWord) {
@@ -340,6 +345,7 @@ $(document).ready(function() {
             $("#score").text(totalPoints);
             currentWordScore = totalPoints;
             $("#nextWordBtn").prop("disabled", false);
+
         } else {
             // If not valid, show the formed sequence but score = 0, disable Next Word.
             wordElement.textContent = word;
@@ -349,13 +355,14 @@ $(document).ready(function() {
         }
     }
 
-    // getLetterValue: Returns the value of a given letter tile using the pieces data.
+    // returns the value of a given letter tile using the pieces data.
     function getLetterValue(letter, pieces) {
         const piece = pieces.find(p => p.letter === letter);
         return piece ? piece.value : 0;
     }
 
-    // shuffle: Randomly shuffles an array using Fisher-Yates algorithm.
+    // randomly shuffles an array using Fisher-Yates algorithm found on StackOverflow. 
+    // Source: https://stackoverflow.com/questions/59810241/how-to-fisher-yates-shuffle-a-javascript-array
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -364,7 +371,7 @@ $(document).ready(function() {
         return array;
     }
 
-    // checkAdjacency: Ensures that all placed letters are contiguous on the board.
+    // checkAdjacency: Ensures that all placed letters are contiguous on the board as instructed.
     // If there's a gap, the newly placed tile must revert to the rack.
     function checkAdjacency() {
         if (draggedLetters.length <= 1) {
