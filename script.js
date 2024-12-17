@@ -361,12 +361,15 @@ $(document).ready(function() {
         return piece ? piece.value : 0;
     }
 
-    // randomly shuffles an array using Fisher-Yates algorithm found on StackOverflow. 
-    // Source: https://stackoverflow.com/questions/59810241/how-to-fisher-yates-shuffle-a-javascript-array
+    // randomly shuffles an array of letters in hand using Fisher-Yates algorithm found on YouTube. 
+    // Source: https://www.youtube.com/watch?v=tLxBwSL3lPQ
     function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
+        var i = array.length, j, temp;
+        while (--i > 0) {
+            j = Math.floor(Math.random() * (i + 1));
+            temp = array[j];
+            array[j] = array[i];
+            array[i] = temp;
         }
         return array;
     }
